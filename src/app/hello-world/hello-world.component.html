@@ -1,0 +1,10 @@
+<label>Digite seu nome:</label>
+
+<input type="text" placeholder="Informe seu nome:"
+    [(ngModel)] = "nome" (keydown)="esconderNome()"
+/>
+
+<button (click)="clique()">Clique Aqui</button>
+<p *ngIf="exibeNome">
+    Hello World, {{nome}}!
+</p>
