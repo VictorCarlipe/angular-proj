@@ -1,0 +1,18 @@
+<H1>Exercício 1</H1>
+    <label for="altura" style="margin-right: 5px;">Altura(m):</label>
+    <input type="number" id="altura" 
+        [(ngModel)] = "altura" (keydown) = "hidderesult()" 
+    style="margin-right: 5px;">
+
+    <label for="peso" style="margin-right: 5px;">Peso(kg):</label>
+    <input type="number" id="peso" 
+        [(ngModel)] = "peso" (keydown) = "hidderesult()"
+        style="margin-right: 5px;">
+    <button (click)="calcularImc()">Calcular</button>
+<p *ngIf="visible">
+   Resultado do IMC: {{resultado | number: '0.0-3'}}
+</p>
+
+<p *ngIf="visible">
+    Classificação do IMC: <b><span [ngStyle]="{'color': cor}">{{classificacao}}</span></b>
+ </p>

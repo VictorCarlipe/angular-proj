@@ -1,0 +1,21 @@
+<H1>Exercício 2</H1>
+
+<input type="text" [(ngModel)]= 'tarefa' placeholder="Descrição da tarefa" maxlength="20" style="margin-right: 5px;">
+<button (click)="adicionar()">Adicionar</button>
+
+<ul>
+  <li *ngFor="let item of lista">
+    <div (click) = "concluir(item)">
+      <p class="item">
+        <span *ngIf="(item.status == 'concluido')" class="concluido">
+          {{item.descricao}}
+        </span>
+
+        <span *ngIf="(item.status == 'pendente')" class="pendente">
+          {{item.descricao}}
+        </span>
+        <button (click)="remover(item)">Excluir</button>
+      </p>
+    </div>
+  </li>
+</ul>
