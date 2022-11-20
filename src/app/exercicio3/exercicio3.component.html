@@ -1,0 +1,26 @@
+<h1>Exericicio 3</h1>
+<br><br>
+
+
+
+<div style="border-style: solid; width: '13rem';">
+  <h3 class="conteudo" style="text-align: 'center';">Calculadora</h3>
+
+  <input class="conteudo" type="number" [(ngModel)] = 'num1' placeholder="Número 1" ><br>
+  <input class="conteudo" type="number" [(ngModel)] = 'num2' placeholder="Numero 2"><br>
+
+  <select class="operador"
+  [(ngModel)] = 'operacao'>
+    <option>Soma</option>
+    <option>Subtração</option>
+    <option>Multiplicação</option>
+    <option>Divisão</option>
+  </select><br>
+
+  <button class="botao" (click) = 'calcular()'>Calcular</button>
+  <button class="botao" (click) = 'limpar()'>Limpar</button>
+
+  <p class="conteudo" *ngIf="showResult">
+    Resultado: <b> {{resultado | number: '0.0-6'}} </b>
+  </p>
+</div>
